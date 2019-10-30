@@ -1,0 +1,46 @@
+[
+  {
+    "function": "init",
+    "controller": "LandController"
+  },
+  {
+    "function": "queryLand",
+    "verb": "get",
+    "controller": "LandController"
+  },
+  {
+    "function": "queryAllLands",
+    "verb": "get",
+    "controller": "LandController"
+  },
+  {
+    "function": "createLand",
+    "verb": "post",
+    "controller": "LandController"
+  },
+  {
+    "function": "changeLandOwner",
+    "verb": "post",
+    "controller": "LandController"
+  },
+  {
+    "function": "getHistoryForLand",
+    "verb": "get",
+    "controller": "LandController"
+  },
+  {
+    "function": "changeSurveyorVote",
+    "verb": "post",
+    "controller": "LandController"
+  },
+  {
+    "function": "changeNotaryVote",
+    "verb": "post",
+    "controller": "LandController"
+  },
+  {
+    "function": "changeCurrentOwnerVote",
+    "verb": "post",
+    "controller": "LandController"
+  }
+]

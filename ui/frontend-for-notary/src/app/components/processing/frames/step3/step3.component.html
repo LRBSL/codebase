@@ -1,0 +1,20 @@
+<div class="container-fluid" *ngIf="isBlockListEmpty()">
+  <div class="col-5 mx-auto">
+    <img src="assets/loading.gif" class="img-fluid" />
+  </div>
+</div>
+
+<div class="container-fluid m-0 p-0" *ngIf="!isBlockListEmpty()">
+  <div *ngFor="let block of blockList;let lst = last" class="col-6 mx-auto">
+    <div class="card-body rounded bg-card my-2 shadow">
+      <b>Land Owner :</b> {{block.owner}}<br>
+      <b>Parent Land ID :</b> {{block.parentLandID}}<br>
+      <b>Land Extent :</b> {{block.extent}}<br>
+      <b>Regional Land Registry :</b> {{block.rlRegistry}}<br>
+      <b>Land Boundaries : </b> {{block.boundaries}}<br>
+    </div>
+    <div *ngIf="!lst" class="text-center">
+      <img src="assets/up_arrow.png" class="img-fluid arrow">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,189 @@
+<div class="container-fluid" *ngIf="!isDataLoaded()">
+  <div class="col-5 mx-auto">
+    <img src="assets/loading.gif" class="img-fluid" />
+  </div>
+</div>
+
+<div class="container-fluid m-0 p-0" *ngIf="isDataLoaded()">
+
+  <!-- land details -->
+  <div class="row card mt-2">
+    <div class="card-header">
+      LAND DETAILS
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="txtId" class="col-3 font-weight-bold pl-4 my-auto"> Land ID </label>
+        <div class="col-9">
+          <input id="txtId" type="text" class="form-control" disabled value="{{getLandBlock().id}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtOwner" class="col-3 font-weight-bold pl-4 my-auto"> Owner </label>
+        <div class="col-9">
+          <input id="txtOwner" type="text" class="form-control" disabled value="{{getLandBlock().owner}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtParentLandID" class="col-3 font-weight-bold pl-4 my-auto"> Parent Land ID </label>
+        <div class="col-9">
+          <input id="txtParentLandID" type="text" class="form-control" disabled value="{{getLandBlock().parentLandID}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtRLRegistry" class="col-3 font-weight-bold pl-4 my-auto"> Regional Land Registry </label>
+        <div class="col-9">
+          <input id="txtRLRegistry" type="text" class="form-control" disabled value="{{getLandBlock().rlRegistry}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtExtent" class="col-3 font-weight-bold pl-4 my-auto"> Extent </label>
+        <div class="col-9">
+          <input id="txtExtent" type="text" class="form-control" disabled value="{{getLandBlock().extent}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtBoundaries" class="col-3 font-weight-bold pl-4 my-auto"> Land Boundaries </label>
+        <div class="col-9">
+          <input id="txtBoundaries" type="text" class="form-control" disabled value="{{getLandBlock().boundaries}}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- owner details -->
+  <div class="row card mt-4">
+    <div class="card-header">
+      LAND OWNER DETAILS
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="txtNIC" class="col-3 font-weight-bold pl-4 my-auto"> NIC No </label>
+        <div class="col-9">
+          <input id="txtNIC" type="text" class="form-control" disabled value="{{getOwnerNIC().ownerNIC}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtFullname" class="col-3 font-weight-bold pl-4 my-auto"> Fullname</label>
+        <div class="col-9">
+          <input id="txtFullname" type="text" class="form-control" disabled value="{{getOwnerNIC().fullname}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtGender" class="col-3 font-weight-bold pl-4 my-auto"> Gender </label>
+        <div class="col-9">
+          <input id="txtGender" type="text" class="form-control" disabled value="{{getOwnerNIC().gender}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtBirthday" class="col-3 font-weight-bold pl-4 my-auto"> Birthday </label>
+        <div class="col-9">
+          <input id="txtBirthday" type="text" class="form-control" disabled
+            value="{{getOwnerNIC().birthday.slice(0,10)}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtOccupation" class="col-3 font-weight-bold pl-4 my-auto"> Occupation </label>
+        <div class="col-9">
+          <input id="txtOccupation" type="text" class="form-control" disabled value="{{getOwnerNIC().occupation}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtPostalAddress" class="col-3 font-weight-bold pl-4 my-auto"> Postal Address </label>
+        <div class="col-9">
+          <input id="txtPostalAddress" type="text" class="form-control" disabled
+            value="{{getOwnerNIC().postal_address}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtRegisteredDate" class="col-3 font-weight-bold pl-4 my-auto"> Registered Date </label>
+        <div class="col-9">
+          <input id="txtRegisteredDate" type="text" class="form-control" disabled
+            value="{{getOwnerNIC().registered_date.slice(0,10)}}">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row card mt-4">
+    <div class="card-header">
+      LAND DEED DETAILS
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="txtRegNo" class="col-3 font-weight-bold pl-4 my-auto"> Reg No </label>
+        <div class="col-9">
+          <input id="txtRegNo" type="text" class="form-control" disabled value="{{getLandDeed().reg_no}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtLandID" class="col-3 font-weight-bold pl-4 my-auto"> Land ID </label>
+        <div class="col-9">
+          <input id="txtLandID" type="text" class="form-control" disabled value="{{getLandDeed().land_id}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtNotaryName" class="col-3 font-weight-bold pl-4 my-auto"> Notary Name </label>
+        <div class="col-9">
+          <input id="txtNotaryName" type="text" class="form-control" disabled value="{{getLandDeed().notary_name}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtDeedType" class="col-3 font-weight-bold pl-4 my-auto"> Deed Type </label>
+        <div class="col-9">
+          <input id="txtDeedType" type="text" class="form-control" disabled value="{{getLandDeed().deed_type}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtPlanID" class="col-3 font-weight-bold pl-4 my-auto"> Plan ID </label>
+        <div class="col-9">
+          <input id="txtPlanID" type="text" class="form-control" disabled value="{{getLandDeed().plan_id}}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row card mt-4">
+    <div class="card-header">
+      LAND PLAN DETAILS
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="txtRegPlanNo" class="col-3 font-weight-bold pl-4 my-auto"> Reg No </label>
+        <div class="col-9">
+          <input id="txtRegPlanNo" type="text" class="form-control" disabled value="{{getLandPlan().reg_no}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtLandIDOfPlan" class="col-3 font-weight-bold pl-4 my-auto"> Land ID </label>
+        <div class="col-9">
+          <input id="txtLandIDOfPlan" type="text" class="form-control" disabled value="{{getLandPlan().land_id}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtSurveyorName" class="col-3 font-weight-bold pl-4 my-auto"> Surveyor Name </label>
+        <div class="col-9">
+          <input id="txtSurveyorName" type="text" class="form-control" disabled value="{{getLandPlan().surveyor_name}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

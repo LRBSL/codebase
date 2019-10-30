@@ -1,0 +1,8 @@
+.bg-card {
+  background-color: rgba(231, 115, 38, 0.267);
+  border: 1px solid rgb(231, 115, 38);;
+}
+
+.arrow {
+  width: 5% !important;
+}

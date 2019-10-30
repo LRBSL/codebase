@@ -1,0 +1,11 @@
+{
+  "txTimeout": 300000,
+  "skipInit": true,
+  "controllers": [
+    {
+      "name": "land-cc",
+      "version": "file:./packages/land-cc",
+      "controller": "LandController"
+    }
+  ]
+}

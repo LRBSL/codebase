@@ -1,0 +1,91 @@
+version: '3.7'
+services:
+  notary_frontend:
+    container_name: notary-frontend
+    build:
+      context: ./ui/frontend-for-notary/
+      dockerfile: Dockerfile
+    volumes:
+      - './ui/frontend-for-notary:/app'
+      - '/app/node_modules'
+    ports:
+      - '4000:4200'
+    networks:
+      lrbsl_net:
+        ipv4_address: 172.28.1.1
+    depends_on:
+      - database
+      - notary_backend
+
+  rlr_frontend:
+    container_name: rlr-frontend
+    build:
+      context: ./ui/frontend-for-rlr/
+      dockerfile: Dockerfile
+    volumes:
+      - './ui/frontend-for-rlr:/app'
+      - '/app/node_modules'
+    ports:
+      - '4001:4200'
+    networks:
+      lrbsl_net:
+        ipv4_address: 172.28.1.3
+    depends_on:
+      - database
+      - rlr_backend
+
+  notary_backend:
+    container_name: notary-backend
+    build:
+      context: ./backends/notary-backend/
+      dockerfile: Dockerfile
+    volumes:
+      - './backends/notary-backend:/app'
+      - '/app/node_modules'
+    ports:
+      - '4500:3000'
+    networks:
+      lrbsl_net:
+        ipv4_address: 172.28.1.2
+    depends_on:
+      - database
+
+  rlr_backend:
+    container_name: rlr-backend
+    build:
+      context: ./backends/rlr-backend/
+      dockerfile: Dockerfile
+    volumes:
+      - './backends/rlr-backend:/app'
+      - '/app/node_modules'
+    ports:
+      - '4501:3000'
+    networks:
+      lrbsl_net:
+        ipv4_address: 172.28.1.4
+    depends_on:
+      - database
+
+  database:
+    container_name: db-mariadb
+    image: mariadb:10.3
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '3306:3306'
+    volumes:
+      - 'logvolume01:/var/log'
+      - ./backends/db/db.sql:/docker-entrypoint-initdb.d/dd.sql
+    networks:
+      lrbsl_net:
+        ipv4_address: 172.28.1.5
+
+volumes:
+  logvolume01: {}
+
+networks:
+  lrbsl_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.28.0.0/16'

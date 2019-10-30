@@ -1,0 +1,27 @@
+<div class="row mt-5 pt-5">
+  <div class="col-4 mx-auto card shadow">
+    <div class="row card-header">
+      <h4 class="my-0 mx-auto"> NOTARY LOGIN </h4>
+    </div>
+    <div class="row card-body">
+      <form class="container mt-4" [formGroup]="loginForm">
+        <div class="form-group row">
+          <input id="username" class="col-8 form-control mx-auto text-center" type="text" formControlName="username"
+            placeholder="Enter Your Username" />
+        </div>
+        <div class="form-group row">
+          <input id="password" class="col-8 form-control mx-auto text-center" type="password" formControlName="password"
+            placeholder="Enter Your Password" />
+        </div>
+      </form>
+    </div>
+    <div class="row card-footer">
+      <div class="col-6">
+        <button class="btn btn-primary btn-block">Cancel</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-success btn-block" (click)="loginAction()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>

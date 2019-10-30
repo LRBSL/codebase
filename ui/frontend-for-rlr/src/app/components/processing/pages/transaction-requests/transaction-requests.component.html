@@ -1,0 +1,12 @@
+<div *ngIf="!isBlockListEmpty()">
+  <div *ngFor="let block of blockList" class="row card">
+    <div class="card-body">
+      <b>Land ID :</b> {{block.id}}<br>
+      <b>Land Extent :</b> {{block.extent}}<br>
+      <b>Land Current Owner :</b> {{block.owner}}<br>
+      <b>Land New Requested Owner :</b> {{block.newOwner}}<br>
+      <b>Regional Land Registry :</b> {{block.rlRegistry}}<br>
+      <button class="btn btn-warning pull-right" (click)="currentOwnerAccepted(block.id)">Current Owner Accepted</button>
+    </div>
+  </div>
+</div>

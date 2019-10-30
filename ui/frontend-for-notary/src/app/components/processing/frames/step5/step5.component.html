@@ -1,0 +1,70 @@
+<div class="container-fluid" *ngIf="!isDataLoaded()">
+  <div class="col-5 mx-auto">
+    <img src="assets/loading.gif" class="img-fluid" />
+  </div>
+</div>
+
+<div class="container-fluid m-0 p-0" *ngIf="isDataLoaded()">
+
+  <!-- buyser details -->
+  <div class="row card mt-4">
+    <div class="card-header">
+      BUYER DETAILS
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="txtNIC" class="col-3 font-weight-bold pl-4 my-auto"> NIC No </label>
+        <div class="col-9">
+          <input id="txtNIC" type="text" class="form-control" disabled value="{{getBuyerNIC().ownerNIC}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtFullname" class="col-3 font-weight-bold pl-4 my-auto"> Fullname</label>
+        <div class="col-9">
+          <input id="txtFullname" type="text" class="form-control" disabled value="{{getBuyerNIC().fullname}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtGender" class="col-3 font-weight-bold pl-4 my-auto"> Gender </label>
+        <div class="col-9">
+          <input id="txtGender" type="text" class="form-control" disabled value="{{getBuyerNIC().gender}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtBirthday" class="col-3 font-weight-bold pl-4 my-auto"> Birthday </label>
+        <div class="col-9">
+          <input id="txtBirthday" type="text" class="form-control" disabled
+            value="{{getBuyerNIC().birthday.slice(0,10)}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtOccupation" class="col-3 font-weight-bold pl-4 my-auto"> Occupation </label>
+        <div class="col-9">
+          <input id="txtOccupation" type="text" class="form-control" disabled value="{{getBuyerNIC().occupation}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtPostalAddress" class="col-3 font-weight-bold pl-4 my-auto"> Postal Address </label>
+        <div class="col-9">
+          <input id="txtPostalAddress" type="text" class="form-control" disabled
+            value="{{getBuyerNIC().postal_address}}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="txtRegisteredDate" class="col-3 font-weight-bold pl-4 my-auto"> Registered Date </label>
+        <div class="col-9">
+          <input id="txtRegisteredDate" type="text" class="form-control" disabled
+            value="{{getBuyerNIC().registered_date.slice(0,10)}}">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

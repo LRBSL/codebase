@@ -1,0 +1,18 @@
+<div class="container-fluid border">
+  <form class="my-4" [formGroup]="ownerDataForm">
+    <div class="form-group row">
+      <label class="col-3 col-form-label offset-2 my-auto font-weight-bold" for="owner-nic"> NIC no of the Land Owner :
+      </label>
+      <div class="col-5">
+        <input id="owner-nic" class="form-control" type="text" formControlName="ownerNIC"
+          placeholder="National Identity Card No" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-3 col-form-label offset-2 my-auto font-weight-bold" for="land-key"> Key of the Land : </label>
+      <div class="col-5">
+        <input id="land-key" class="form-control" type="text" formControlName="landKey" placeholder="Land Key" />
+      </div>
+    </div>
+  </form>
+</div>

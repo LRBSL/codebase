@@ -1,0 +1,12 @@
+a:hover, a:focus, button:hover {
+  color: white !important;
+}
+
+a:hover {
+  background-color: #1BC8E2 !important;
+}
+
+.active {
+  background-color: #17A2B8 !important;
+  color: white !important;
+}

@@ -1,0 +1,12 @@
+{
+  "/api": {
+    "target": "http://13.229.128.106:4501",
+    "secure": false
+  },
+  "/bc/*": {
+    "target": "http://13.229.128.106:8000",
+    "pathRewrite": {
+      "^/bc" : ""
+    }
+  }
+}

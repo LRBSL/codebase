@@ -1,0 +1,6 @@
+<div class="container-fluid h-100">
+  <app-header></app-header>
+  <app-nav-bar *ngIf="!isLogin()"></app-nav-bar>
+  <app-processing-window *ngIf="!isLogin()"></app-processing-window>
+  <app-login *ngIf="isLogin()"></app-login>
+</div>
