@@ -1,0 +1,6 @@
+.*
+blockchain-product-rd/byzantine-browser/
+config/
+bin/
+hyperledger-fabric-network/
+!.gitignore
