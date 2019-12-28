@@ -1,6 +1,5 @@
 .*
-blockchain-product-rd/byzantine-browser/
-config/
-bin/
+etc/
+lrbsl/
 hyperledger-fabric-network/
 !.gitignore
