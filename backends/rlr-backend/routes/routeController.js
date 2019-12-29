@@ -61,4 +61,15 @@ router.post('/getPlan', function(req, res) {
   });
 });
 
+router.post('/getMemberDetails', function(req, res) {
+  dbcon.getMemberDataByIdOrNIC(req.body.id_or_nic, function(result, error) {
+    if(error) {
+      res.status(404);
+      res.send(error);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
 module.exports = router;

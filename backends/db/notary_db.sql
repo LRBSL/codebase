@@ -2,9 +2,6 @@ create database notary_db;
 
 use notary_db;
 
-create table users(id VARCHAR(5) PRIMARY KEY,username VARCHAR(25) NOT NULL,password VARCHAR(25) NOT NULL);
-insert into users values ('NT001','notary','notary');
-
 create table lands_mapper(nic VARCHAR(12),land_key VARCHAR(25),land_id VARCHAR(10) NOT NULL, PRIMARY KEY (nic,land_key));
 insert into lands_mapper values ('962650678V','1234','LAND_001'), ('123456789012','4321','LAND_002');
 

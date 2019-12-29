@@ -75,10 +75,7 @@ services:
       - '3306:3306'
     volumes:
       - 'logvolume01:/var/log'
-      - ./backends/db/rlr_db.sql:/docker-entrypoint-initdb.d/rlr.sql
-      - ./backends/db/notary_db.sql:/docker-entrypoint-initdb.d/notary_db.sql
-      - ./backends/db/surveyor_db.sql:/docker-entrypoint-initdb.d/surveyor_db.sql
-      - ./backends/db/nic_db.sql:/docker-entrypoint-initdb.d/nic_db.sql
+      - ./backends/db/db.sql:/docker-entrypoint-initdb.d/db.sql
     networks:
       lrbsl_net:
         ipv4_address: 172.230.1.5

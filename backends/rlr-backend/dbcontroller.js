@@ -1,10 +1,10 @@
 var mysql = require('mysql');
-var db_config = require('./config');
+var DBconfigurations = require('./config');
 
 var connection;
 
 function handleDisconnect() {
-  connection = mysql.createConnection(db_config);
+  connection = mysql.createConnection(DBconfigurations);
 
   connection.connect(function(err) { 
     if(err) {
@@ -26,7 +26,7 @@ function handleDisconnect() {
 // get user by user name
 var login = function (userName, password, callback) {
   handleDisconnect();
-  var query = "SELECT * FROM users WHERE username LIKE '" + userName + "' AND password LIKE '" + password + "' LIMIT 1";
+  var query = "SELECT * FROM rlr_users WHERE username LIKE '" + userName + "' AND password LIKE '" + password + "' LIMIT 1";
   connection.query(query, function (err, resultUser) {
     if (err || resultUser.length == 0) {
       callback(null, err);
@@ -93,4 +93,18 @@ var getPlan = function (land_id, callback) {
   connection.end();
 }
 
-module.exports = { login, getLandIdFromMapper, getNIC, getDeed, getPlan };
+// get member details
+var getMemberDataByIdOrNIC = function (id_or_nic, callback) {
+  handleDisconnect();
+  var query = "SELECT * FROM notary_data WHERE id LIKE '" + id_or_nic + "' OR nic_no LIKE '" + id_or_nic + "'";
+  console.log(query);
+  connection.query(query, function (err, resultMember) {
+    if (err || resultMember.length == 0) {
+      callback(null, err);
+    } else {
+      callback(resultMember);
+    }
+  });
+  connection.end();
+}
+module.exports = { login, getLandIdFromMapper, getNIC, getDeed, getPlan, getMemberDataByIdOrNIC };
