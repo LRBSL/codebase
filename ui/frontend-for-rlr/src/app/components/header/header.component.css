@@ -4,3 +4,7 @@ img {
   max-width: 27%;
   height: auto;
 }
+
+#login-icon {
+  color: aqua;
+}

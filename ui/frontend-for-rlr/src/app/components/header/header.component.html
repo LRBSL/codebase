@@ -1,9 +1,19 @@
-<div class="row my-4 py-2 bg-success shadow">
+<div class="row py-2 bg-success shadow">
   <div class="col-3 my-auto">
     <img class="img-thumbnail float-lg-right" src="assets/logo.png" alt="logo image">
   </div>
-  <div class="col-9 float-lg-left my-auto">
+  <div class="col-8 float-lg-left my-auto">
     <h1 class="text-white font-weight-bold">Land Registration BlockChain for Sri Lanka</h1>
-    <h3 class="text-white-50">Regional Land Registry Service</h3>
+    <h3 class="text-white-50">Regional Land Registry - Colombo 01</h3>
+  </div>
+  <div class="col-1">
+    <div *ngIf="!isLoginRoute()" class="border border-warning rounded">
+      <div class="text-center">
+        <i class="fa fa-user fa-4x" aria-hidden="true" id="login-icon"></i>
+      </div>
+      <div class="text-center">
+        <a class="btn btn-secondary text-white btn-block py-0" (click)="logout()">Log Out</a>
+      </div>
+      </div>
   </div>
 </div>

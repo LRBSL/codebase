@@ -10,10 +10,11 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { WindowComponent } from './components/processing/window/window.component';
 import { DashboardComponent } from './components/processing/pages/dashboard/dashboard.component';
 import { TransactionRequestsComponent } from './components/processing/pages/transaction-requests/transaction-requests.component';
-import { SupportFacilitiesComponent } from './components/processing/pages/support-facilities/support-facilities.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchComponent } from './components/processing/pages/search/search.component';
+import { SearchLandRecordsComponent } from './components/processing/pages/search-land-records/search-land-records.component';
+import { SearchNotariesSurveyorsComponent } from './components/processing/pages/search-notaries-surveyors/search-notaries-surveyors.component';
+import { AddNewMemberComponent } from './components/processing/pages/add-new-member/add-new-member.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,10 @@ import { SearchComponent } from './components/processing/pages/search/search.com
     WindowComponent,
     DashboardComponent,
     TransactionRequestsComponent,
-    SupportFacilitiesComponent,
     LoginComponent,
-    SearchComponent
+    SearchLandRecordsComponent,
+    SearchNotariesSurveyorsComponent,
+    AddNewMemberComponent
   ],
   imports: [
     BrowserModule,
