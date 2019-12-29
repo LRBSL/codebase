@@ -96,7 +96,7 @@ var getPlan = function (land_id, callback) {
 // get member details
 var getMemberDataByIdOrNIC = function (id_or_nic, callback) {
   handleDisconnect();
-  var query = "SELECT * FROM notary_data WHERE id LIKE '" + id_or_nic + "' OR nic_no LIKE '" + id_or_nic + "'";
+  var query = "SELECT * FROM member_data WHERE id LIKE '" + id_or_nic + "' OR nic_no LIKE '" + id_or_nic + "'";
   console.log(query);
   connection.query(query, function (err, resultMember) {
     if (err || resultMember.length == 0) {

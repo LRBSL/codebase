@@ -22,9 +22,10 @@ insert into notary_users values
 ('NT002','sachintha','sachintha'),
 ('NT003','gayan','gayan');
 
--- notary data table
-create table notary_data(
+-- member data table
+create table member_data(
   id VARCHAR(10) PRIMARY KEY,
+  type VARCHAR(10) NOT NULL,
   fname VARCHAR(50) NOT NULL,
   lname VARCHAR(50) NOT NULL,
   nic_no VARCHAR(12) NOT NULL,
@@ -34,10 +35,16 @@ create table notary_data(
   email_address VARCHAR(255),
   mobile_no VARCHAR(15)
   );
-insert into notary_data values 
-('NT001','ravindu','sachintha','962650678V','2018-10-12','RLR001',
+insert into member_data values 
+('NT001','Notary','Ravindu','Sachintha','962650678V','2018-10-12','RLR001',
 '640/57, 2nd Kurana, Negombo','ravindusachintha53@gmail.com','0772769963'), 
-('NT002','sachintha','rathnayake','952505986V','2017-05-06','RLR002',
+('NT002','Notary','Sachintha','Rathnayake','952505986V','2017-05-06','RLR002',
 '93, Main Street, Seeduwa','sachintha@gmail.com','0773245123'), 
-('NT003','gayan','sampath','953648782V','2019-01-01','RLR003',
-'45, Greens Road, Gampaha','gayan@gmail.com','0714325645');
+('NT003','Notary','Gayan','Sampath','953648782V','2019-01-01','RLR003',
+'45, Greens Road, Gampaha','gayan@gmail.com','0714325645'),
+('SV001','Surveyor','Anura','Withana','962665178V','2018-10-12','RLR001',
+'07, Main Street, Negombo','anura@gmail.com','0752245689'), 
+('SV002','Surveyor','Janindu','Rathnayake','952144566V','2016-05-06','RLR002',
+'13, Suhada Road, Kandana','janindu@gmail.com','0773232523'), 
+('SV003','Surveyor','Pasindu','Bhanuka','956588782V','2018-01-01','RLR003',
+'45, Greens Road, Yakkala','pasindu@gmail.com','0765285645');

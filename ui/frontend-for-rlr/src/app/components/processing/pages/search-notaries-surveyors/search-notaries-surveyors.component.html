@@ -2,10 +2,10 @@
   <form class="card bg-light my-4 p-3" [formGroup]="searchMembersForm">
     <div class="row">
       <div class="col-8">
-        <input class="form-control" type="text" placeholder="Employee ID or NIC" />
+        <input class="form-control" type="text" placeholder="Employee ID or NIC" formControlName="search_input"/>
       </div>
       <div class="col-4">
-        <button class="btn btn-primary form-control">Search</button>
+        <button class="btn btn-primary form-control" (click)="search()">Search</button>
       </div>
     </div>
   </form>
@@ -22,7 +22,7 @@
             <b>Address :</b> {{record.memberAddress}}
           </div>
           <div class="col-4">
-            <a class="btn btn-warning border-dark float-right" data-toggle="modal" data-target="#exampleModalCenter">View More Information</a>
+            <a class="btn btn-warning border-dark float-right" data-toggle="modal" data-target="#exampleModalCenter" (click)="setSelectedMember(record)">View More Information</a>
           </div>
         </div>
       </div>
@@ -35,13 +35,21 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"> Member Information </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <b>ID :</b> {{selectedMember.memberId}} <br>
+        <b>Name :</b> {{selectedMember.memberName}} <br>
+        <b>Type :</b> {{selectedMember.memberType}} <br>
+        <b>NIC :</b> {{selectedMember.memberNIC}} <br>
+        <b>RLR ID :</b> {{selectedMember.memberRLR}} <br>
+        <b>Registered Date :</b> {{selectedMember.memberRegDate}} <br>
+        <b>Postal Address :</b> {{selectedMember.memberAddress}} <br>
+        <b>Email Address :</b> {{selectedMember.memberEmail}} <br>
+        <b>Mobile No :</b> {{selectedMember.memberMobile}} <br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
