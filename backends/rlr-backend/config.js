@@ -1,8 +1,8 @@
 var DBconfigurations = {
   connectionLimit : 5,
-  host     : '172.28.1.5',
+  host     : '172.230.1.5',
   port     : '3306',
-  database: 'notary_db',
+  database: 'rlr_db',
   user     : 'root',
   password : 'root'
 }

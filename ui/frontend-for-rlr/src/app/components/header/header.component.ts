@@ -22,4 +22,12 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
   }
 
+  getUserName() {
+    let userName = localStorage.getItem('userName');
+    if(userName != null) {
+      return ': ' + userName.toUpperCase();
+    }
+    return;
+  }
+
 }
