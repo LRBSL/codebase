@@ -1,12 +1,25 @@
-<div *ngIf="!isBlockListEmpty()">
-  <div *ngFor="let block of blockList" class="row card">
-    <div class="card-body">
-      <b>Land ID :</b> {{block.id}}<br>
-      <b>Land Extent :</b> {{block.extent}}<br>
-      <b>Land Current Owner :</b> {{block.owner}}<br>
-      <b>Land New Requested Owner :</b> {{block.newOwner}}<br>
-      <b>Regional Land Registry :</b> {{block.rlRegistry}}<br>
+<div class="container">
+  <div class="row my-3">
+    <div *ngIf="isBlockListEmpty()" class="card w-100 text-center py-4">
+      No Past Land Records
     </div>
-
+    <div *ngFor="let record of blockList" class="card w-100 my-3">
+      <div class="card-header text-info"><b>Record of Land ID: {{record.id}}</b></div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-8">
+            <b>Land Current Owner :</b> {{record.owner}}<br>
+            <b>Land Extent :</b> {{record.extent}}<br>
+            <b>Land New Requested Owner :</b> {{record.newOwner}}<br>
+            <b>Regional Land Registry :</b> {{record.rlRegistry}}<br>
+          </div>
+          <div class="col-4">
+            <a class="btn btn-warning border-dark btn-block" data-toggle="modal" data-target="#exampleModalCenter">Deed Information</a>
+            <a class="btn btn-warning border-dark btn-block">Plan Information</a>
+            <a class="btn btn-warning border-dark btn-block">Land History</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

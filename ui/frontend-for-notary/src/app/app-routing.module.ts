@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandRegistrationComponent } from './components/processing/pages/land-registration/land-registration.component';
 import { DashboardComponent } from './components/processing/pages/dashboard/dashboard.component';
 import { LandRecordsComponent } from './components/processing/pages/land-records/land-records.component';
-import { SupportFacilitiesComponent } from './components/processing/pages/support-facilities/support-facilities.component';
 import { Step1Component } from './components/processing/frames/step1/step1.component';
 import { Step2Component } from './components/processing/frames/step2/step2.component';
 import { Step3Component } from './components/processing/frames/step3/step3.component';
@@ -11,9 +10,10 @@ import { Step4Component } from './components/processing/frames/step4/step4.compo
 import { Step5Component } from './components/processing/frames/step5/step5.component';
 import { Step6Component } from './components/processing/frames/step6/step6.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/processing/pages/profile/profile.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   {
@@ -29,7 +29,7 @@ const routes: Routes = [
     ]
   },
   { path: 'land-records', component: LandRecordsComponent },
-  { path: 'support-facilities', component: SupportFacilitiesComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', redirectTo: 'dashboard' }
 ];
 

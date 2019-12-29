@@ -17,9 +17,9 @@ import { Step6Component } from './components/processing/frames/step6/step6.compo
 import { LandRegistrationComponent } from './components/processing/pages/land-registration/land-registration.component';
 import { DashboardComponent } from './components/processing/pages/dashboard/dashboard.component';
 import { LandRecordsComponent } from './components/processing/pages/land-records/land-records.component';
-import { SupportFacilitiesComponent } from './components/processing/pages/support-facilities/support-facilities.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/processing/pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     LandRegistrationComponent,
     DashboardComponent,
     LandRecordsComponent,
-    SupportFacilitiesComponent,
     LoginComponent,
-    Step3Component
+    Step3Component,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

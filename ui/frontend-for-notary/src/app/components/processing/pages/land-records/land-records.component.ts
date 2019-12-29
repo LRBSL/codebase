@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { LandRegistrationService, LandBlock } from 'src/app/services/land-registration.service';
 import { Subscription } from 'rxjs';
 
+interface Land {
+  landId: string,
+  landOwner:string,
+  landExtent:number
+}
+
 @Component({
   selector: 'app-land-records',
   templateUrl: './land-records.component.html',

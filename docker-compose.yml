@@ -1,21 +1,21 @@
 version: '3.7'
 services:
-  # notary_frontend:
-  #   container_name: notary-frontend
-  #   build:
-  #     context: ./ui/frontend-for-notary/
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #     - './ui/frontend-for-notary:/app'
-  #     - '/app/node_modules'
-  #   ports:
-  #     - '4000:4200'
-  #   networks:
-  #     lrbsl_net:
-  #       ipv4_address: 172.230.1.1
-  #   depends_on:
-  #     - database
-  #     - notary_backend
+  notary_frontend:
+    container_name: notary-frontend
+    build:
+      context: ./ui/frontend-for-notary/
+      dockerfile: Dockerfile
+    volumes:
+      - './ui/frontend-for-notary:/app'
+      - '/app/node_modules'
+    ports:
+      - '4000:4200'
+    networks:
+      lrbsl_net:
+        ipv4_address: 172.230.1.1
+    depends_on:
+      - database
+      - notary_backend
 
   rlr_frontend:
     container_name: rlr-frontend
@@ -34,21 +34,21 @@ services:
       - database
       - rlr_backend
 
-  # notary_backend:
-  #   container_name: notary-backend
-  #   build:
-  #     context: ./backends/notary-backend/
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #     - './backends/notary-backend:/app'
-  #     - '/app/node_modules'
-  #   ports:
-  #     - '4500:3000'
-  #   networks:
-  #     lrbsl_net:
-  #       ipv4_address: 172.230.1.2
-  #   depends_on:
-  #     - database
+  notary_backend:
+    container_name: notary-backend
+    build:
+      context: ./backends/notary-backend/
+      dockerfile: Dockerfile
+    volumes:
+      - './backends/notary-backend:/app'
+      - '/app/node_modules'
+    ports:
+      - '4500:3000'
+    networks:
+      lrbsl_net:
+        ipv4_address: 172.230.1.2
+    depends_on:
+      - database
 
   rlr_backend:
     container_name: rlr-backend
